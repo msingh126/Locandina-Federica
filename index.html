@@ -24,6 +24,7 @@
     }
 
     *{ box-sizing:border-box; }
+
     body{
       margin:0;
       font-family:"Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -32,6 +33,7 @@
         radial-gradient(1200px 600px at 20% -10%, rgba(255,107,44,.14), transparent 60%),
         radial-gradient(900px 500px at 90% 10%, rgba(124,58,237,.12), transparent 60%),
         linear-gradient(180deg, var(--bg2), var(--bg1));
+      overflow-x:hidden;
     }
 
     .wrap{
@@ -46,8 +48,6 @@
       box-shadow: var(--shadow);
       border-radius: var(--radius);
       padding: 28px 22px;
-      overflow:hidden;
-      position:relative;
     }
 
     .title{
@@ -59,7 +59,6 @@
       font-size: clamp(28px, 4.4vw, 48px);
       color: var(--accent);
       -webkit-text-stroke: 2px var(--accent2);
-      text-stroke: 2px var(--accent2);
     }
 
     .subtitle{
@@ -89,28 +88,28 @@
       border-radius: calc(var(--radius) - 6px);
       padding: 18px 18px;
       box-shadow: 0 10px 25px rgba(16,17,20,.06);
+      min-width:0;
     }
 
     .h{
       margin: 0 0 10px;
       font-size: 16px;
       font-weight: 800;
-      letter-spacing:.01em;
     }
 
     .p{
       margin: 0 0 10px;
       color: var(--muted);
-      line-height:1.55;
-      font-size: 14.8px;
+      line-height:1.6;
+      font-size: 15px;
     }
 
     ul{
       margin: 10px 0 0 20px;
       padding:0;
       color: var(--muted);
-      line-height:1.55;
-      font-size: 14.8px;
+      line-height:1.6;
+      font-size: 15px;
     }
 
     .badgeRow{
@@ -126,18 +125,18 @@
       border-radius: 999px;
       padding: 8px 12px;
       font-size: 13px;
-      color: rgba(16,17,20,.80);
       display:flex;
       align-items:center;
       gap:8px;
-      white-space:nowrap;
+      white-space:normal;
     }
 
     .dot{
-      width:10px; height:10px; border-radius:50%;
+      width:10px;
+      height:10px;
+      border-radius:50%;
       background: var(--accent2);
-      box-shadow: 0 0 0 4px rgba(124,58,237,.12);
-      flex: 0 0 auto;
+      flex:0 0 auto;
     }
 
     .contactBox{
@@ -145,7 +144,7 @@
       border: 1px solid rgba(255,107,44,.25);
       background: linear-gradient(135deg, rgba(255,107,44,.10), rgba(124,58,237,.08));
       border-radius: 18px;
-      padding: 14px 14px;
+      padding: 14px;
     }
 
     .email{
@@ -154,9 +153,8 @@
       color: var(--accent);
       text-decoration:none;
       background:#fff;
-      border: 1px solid rgba(0,0,0,.06);
       border-radius: 999px;
-      padding: 10px 12px;
+      padding: 10px 14px;
       margin-top: 8px;
       box-shadow: 0 10px 18px rgba(16,17,20,.08);
       word-break: break-word;
@@ -171,11 +169,7 @@
       padding: 12px 16px;
       border-radius: 999px;
       font-weight: 800;
-      border: 1px solid rgba(0,0,0,.08);
-      box-shadow: 0 10px 20px rgba(255,107,44,.25);
     }
-
-    .btn:hover{ filter: brightness(.95); }
 
     .footer{
       margin-top: 14px;
@@ -212,18 +206,19 @@
             <div class="badge"><span class="dot"></span>Senza diagnosi psichiatriche o neurologiche</div>
           </div>
 
-          <h2 class="h" style="margin-top:16px;">Fase 1: sessioni in laboratorio</h2>
+          <h2 class="h" style="margin-top:18px;">Fase 1: sessioni in laboratorio</h2>
           <ul>
-            <li>Una sessione prima e una dopo il training centrale.</li>
-            <li>Somministrazione dei questionari VVIQ e DASS-21.</li>
-            <li>Compito di immaginazione con registrazione tramite eye-tracker.</li>
+            <li>Una sessione in laboratorio prima dell’inizio del training e una al termine delle quattro settimane.</li>
+            <li>Somministrazione dei questionari <strong>VVIQ</strong> (vividezza dell’immaginazione visiva) e <strong>DASS-21</strong> (valutazione di depressione, ansia e stress).</li>
+            <li>Svolgimento di un breve compito di immaginazione visiva durante il quale l’attività oculare verrà registrata tramite <strong>eye-tracker</strong>.</li>
           </ul>
 
-          <h2 class="h" style="margin-top:16px;">Fase 2: training a casa (4 settimane)</h2>
+          <h2 class="h" style="margin-top:18px;">Fase 2: training a casa (4 settimane)</h2>
           <ul>
-            <li>Training autonomo per 4 settimane.</li>
-            <li>Ogni giorno: ricerca visiva oppure mindfulness (10–30 minuti) con audioguida.</li>
-            <li>Ritorno in laboratorio per ripetere le misurazioni iniziali.</li>
+            <li>Periodo di quattro settimane da svolgere autonomamente a casa.</li>
+            <li>Attività quotidiana: compiti di ricerca visiva oppure pratica di mindfulness.</li>
+            <li>Durata giornaliera variabile tra i 10 e i 30 minuti, seguendo un’audioguida fornita.</li>
+            <li>Al termine del periodo è previsto il ritorno in laboratorio per ripetere le misurazioni iniziali.</li>
           </ul>
 
           <p class="p" style="margin-top:14px;">
@@ -238,7 +233,7 @@
           <p class="p">
             Laboratorio di Psicofisica – Dipartimento di Psicologia e Scienze Cognitive,
             Università degli Studi di Trento.<br>
-            <b>Corso Bettini 31, Rovereto (TN)</b>.
+            <strong>Corso Bettini 31, Rovereto (TN)</strong>
           </p>
 
           <h2 class="h" style="margin-top:16px;">Contatto</h2>
