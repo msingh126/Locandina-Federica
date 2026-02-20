@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
 
   <style>
@@ -14,8 +15,8 @@
       --muted:#4b4f5a;
       --bg1:#ffffff;
       --bg2:#f7f7fb;
-      --accent:#ff6b2c;
-      --accent2:#7c3aed;
+      --accent:#ff6b2c;        /* arancio titolo */
+      --accent2:#7c3aed;       /* viola contorno */
       --card:#ffffff;
       --border:rgba(16,17,20,.10);
       --shadow: 0 18px 45px rgba(16,17,20,.10);
@@ -23,16 +24,14 @@
     }
 
     *{ box-sizing:border-box; }
-
     body{
       margin:0;
-      font-family:"Poppins", sans-serif;
+      font-family:"Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--ink);
       background:
         radial-gradient(1200px 600px at 20% -10%, rgba(255,107,44,.14), transparent 60%),
         radial-gradient(900px 500px at 90% 10%, rgba(124,58,237,.12), transparent 60%),
         linear-gradient(180deg, var(--bg2), var(--bg1));
-      overflow-x:hidden;
     }
 
     .wrap{
@@ -47,6 +46,8 @@
       box-shadow: var(--shadow);
       border-radius: var(--radius);
       padding: 28px 22px;
+      overflow:hidden;
+      position:relative;
     }
 
     .title{
@@ -58,6 +59,7 @@
       font-size: clamp(28px, 4.4vw, 48px);
       color: var(--accent);
       -webkit-text-stroke: 2px var(--accent2);
+      text-stroke: 2px var(--accent2);
     }
 
     .subtitle{
@@ -87,20 +89,28 @@
       border-radius: calc(var(--radius) - 6px);
       padding: 18px 18px;
       box-shadow: 0 10px 25px rgba(16,17,20,.06);
-      min-width:0;
     }
 
     .h{
       margin: 0 0 10px;
       font-size: 16px;
       font-weight: 800;
+      letter-spacing:.01em;
+    }
+
+    .p{
+      margin: 0 0 10px;
+      color: var(--muted);
+      line-height:1.55;
+      font-size: 14.8px;
     }
 
     ul{
       margin: 10px 0 0 20px;
+      padding:0;
       color: var(--muted);
-      line-height:1.6;
-      font-size: 15px;
+      line-height:1.55;
+      font-size: 14.8px;
     }
 
     .badgeRow{
@@ -112,22 +122,22 @@
 
     .badge{
       border:1px solid var(--border);
-      background:#fff;
-      border-radius:999px;
-      padding:8px 12px;
-      font-size:13px;
+      background: linear-gradient(180deg, #fff, #fafafa);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+      color: rgba(16,17,20,.80);
       display:flex;
       align-items:center;
       gap:8px;
-      white-space:normal;
+      white-space:nowrap;
     }
 
     .dot{
-      width:10px;
-      height:10px;
-      border-radius:50%;
-      background:var(--accent2);
-      flex:0 0 auto;
+      width:10px; height:10px; border-radius:50%;
+      background: var(--accent2);
+      box-shadow: 0 0 0 4px rgba(124,58,237,.12);
+      flex: 0 0 auto;
     }
 
     .contactBox{
@@ -135,23 +145,21 @@
       border: 1px solid rgba(255,107,44,.25);
       background: linear-gradient(135deg, rgba(255,107,44,.10), rgba(124,58,237,.08));
       border-radius: 18px;
-      padding: 14px;
-      text-align:center;
+      padding: 14px 14px;
     }
 
-    /* 🔹 UNICA MODIFICA: sistemazione email */
     .email{
       display:inline-block;
       font-weight:800;
       color: var(--accent);
       text-decoration:none;
       background:#fff;
+      border: 1px solid rgba(0,0,0,.06);
       border-radius: 999px;
-      padding: 8px 14px;
+      padding: 10px 12px;
       margin-top: 8px;
       box-shadow: 0 10px 18px rgba(16,17,20,.08);
-      font-size: 15px;        /* leggermente più piccola */
-      white-space: nowrap;    /* non va a capo */
+      word-break: break-word;
     }
 
     .btn{
@@ -163,7 +171,10 @@
       padding: 12px 16px;
       border-radius: 999px;
       font-weight: 800;
+      border: 1px solid rgba(0,0,0,.08);
+      box-shadow: 0 10px 20px rgba(255,107,44,.25);
     }
+    .btn:hover{ filter: brightness(.95); }
 
     .footer{
       margin-top: 14px;
@@ -176,58 +187,63 @@
 
 <body>
   <main class="wrap">
-    <section class="hero">
-
-      <h1 class="title">
-        STUDIO SULLA<br>MINDFULNESS E<br>IMMAGINAZIONE VISIVA
-      </h1>
+    <section class="hero" role="region" aria-label="Studio mindfulness e immaginazione visiva">
+      <h1 class="title">STUDIO SULLA<br>MINDFULNESS E<br>IMMAGINAZIONE VISIVA</h1>
 
       <p class="subtitle">
-        Ciao! Sono alla ricerca di partecipanti per uno studio volto ad esaminare
-        l'influenza della mindfulness sulla capacità di immaginazione visiva.
+        Ciao! Sono alla ricerca di partecipanti per uno studio volto ad esaminare l'influenza della mindfulness
+        sulla capacità di immaginazione visiva.
       </p>
 
       <div class="grid">
-
+        <!-- Colonna principale -->
         <div class="card">
           <h2 class="h">Chi può partecipare</h2>
+          <p class="p">
+            Cerco volontari maggiorenni, preferibilmente destrimani, con vista normale o corretta (lenti a contatto)
+            e senza diagnosi di disturbi psichiatrici/neurologici.
+          </p>
 
-          <div class="badgeRow">
+          <div class="badgeRow" aria-label="Requisiti principali">
             <div class="badge"><span class="dot"></span>Maggiorenni</div>
             <div class="badge"><span class="dot"></span>Preferibilmente destrimani</div>
-            <div class="badge"><span class="dot"></span>Vista normale o corretta (lenti a contatto)</div>
-            <div class="badge"><span class="dot"></span>Senza diagnosi psichiatriche o neurologiche</div>
+            <div class="badge"><span class="dot"></span>Vista normale o corretta</div>
+            <div class="badge"><span class="dot"></span>No diagnosi psich./neuro</div>
           </div>
 
-          <h2 class="h" style="margin-top:18px;">Fase 1: sessioni in laboratorio</h2>
+          <h2 class="h" style="margin-top:16px;">Fase 1: sessioni in laboratorio</h2>
           <ul>
-            <li>Una sessione in laboratorio prima dell’inizio del training e una al termine delle quattro settimane.</li>
-            <li>Somministrazione dei questionari VVIQ e DASS-21.</li>
-            <li>Compito di immaginazione con registrazione tramite eye-tracker.</li>
+            <li>Una sessione in laboratorio svolta <b>prima</b> e <b>dopo</b> il training centrale.</li>
+            <li>Somministrazione di due questionari: <b>VVIQ</b> (immaginazione visiva) e <b>DASS-21</b> (depressione–ansia–stress).</li>
+            <li>Breve compito di immaginazione con registrazione dell’attività oculare tramite <b>eye-tracker</b>.</li>
           </ul>
 
-          <h2 class="h" style="margin-top:18px;">Fase 2: training a casa (4 settimane)</h2>
+          <h2 class="h" style="margin-top:16px;">Fase 2: training a casa (4 settimane)</h2>
           <ul>
-            <li>Periodo di quattro settimane da svolgere autonomamente a casa.</li>
-            <li>Attività quotidiana 10–30 minuti con audioguida fornita.</li>
-            <li>Ritorno in laboratorio per ripetere le misurazioni iniziali.</li>
+            <li>Training autonomo a casa della durata di <b>4 settimane</b>.</li>
+            <li>Ogni giorno: compiti di ricerca visiva oppure pratica di mindfulness (<b>10–30 min</b>), seguendo un’audioguida fornita.</li>
+            <li>Al termine: ritorno in laboratorio per ripetere questionari e compito di immaginazione con eye-tracker.</li>
           </ul>
 
+          <p class="p" style="margin-top:14px;">
+            Grazie per l'attenzione! :)
+          </p>
         </div>
 
-        <aside class="card">
+        <!-- Colonna laterale (solo info utili, senza “in breve”) -->
+        <aside class="card" aria-label="Informazioni">
           <h2 class="h">Dove si svolge</h2>
-          <p>
-            Laboratorio di Psicofisica – Università di Trento<br>
-            <strong>Corso Bettini 31, Rovereto (TN)</strong>
+          <p class="p">
+            Laboratorio di Psicofisica del Dipartimento di Psicologia e Scienze Cognitive,
+            Università degli Studi di Trento.<br>
+            <b>Corso Bettini 31, Rovereto (TN)</b>.
           </p>
 
           <h2 class="h" style="margin-top:16px;">Contatto</h2>
-
           <div class="contactBox">
-            Se sei interessata/o a partecipare:
-
-            <br>
+            <p class="p" style="margin:0;">
+              Se sei interessata/o a partecipare puoi contattarmi via email:
+            </p>
 
             <a class="email" href="mailto:federica.rama@studenti.unitn.it">
               federica.rama@studenti.unitn.it
@@ -235,18 +251,16 @@
 
             <br>
 
-            <a class="btn" href="mailto:federica.rama@studenti.unitn.it">
+            <a class="btn" href="mailto:federica.rama@studenti.unitn.it?subject=Partecipazione%20studio%20mindfulness%20e%20immaginazione%20visiva">
               Scrivimi ora
             </a>
           </div>
         </aside>
-
       </div>
 
       <div class="footer">
         Pagina informativa collegata alla locandina.
       </div>
-
     </section>
   </main>
 </body>
