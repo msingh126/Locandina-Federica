@@ -22,50 +22,80 @@
     body{
       margin:0;
       font-family:"Poppins", sans-serif;
-      background:var(--bg);
+      background:linear-gradient(135deg,#f4f5fb,#ffffff);
       color:var(--text);
       display:flex;
       justify-content:center;
-      padding:30px 15px;
+      padding:40px 15px;
     }
 
     .container{
-      max-width:800px;
+      max-width:820px;
       background:white;
-      padding:35px;
-      border-radius:20px;
-      box-shadow:0 15px 40px rgba(0,0,0,.08);
+      padding:45px;
+      border-radius:22px;
+      box-shadow:0 20px 50px rgba(0,0,0,.08);
     }
 
     .title{
       text-align:center;
-      font-size:clamp(28px,4vw,42px);
+      font-size:clamp(28px,4vw,44px);
       font-weight:800;
       line-height:1.1;
       color:var(--accent);
       -webkit-text-stroke:2px var(--outline);
-      margin-bottom:25px;
+      margin-bottom:30px;
     }
 
     h2{
-      margin-top:25px;
+      margin-top:30px;
       font-size:20px;
+      color:var(--text);
     }
 
     p{
       font-size:16px;
-      line-height:1.6;
+      line-height:1.65;
       color:var(--muted);
-      margin:12px 0;
+      margin:14px 0;
     }
 
-    .cta{
-      margin-top:35px;
+    .contact-box{
+      margin-top:40px;
+      padding:25px;
+      background:linear-gradient(135deg, rgba(255,107,44,.08), rgba(124,58,237,.08));
+      border-radius:18px;
       text-align:center;
+      border:1px solid rgba(0,0,0,.05);
+    }
+
+    .contact-box p{
+      margin:8px 0;
+      color:var(--text);
+    }
+
+    .email{
+      display:inline-block;
+      margin-top:10px;
+      font-size:18px;
+      font-weight:600;
+      color:var(--accent);
+      text-decoration:none;
+      padding:8px 14px;
+      border-radius:30px;
+      background:white;
+      box-shadow:0 8px 20px rgba(0,0,0,.08);
+      transition:.2s ease;
+    }
+
+    .email:hover{
+      transform:translateY(-2px);
+      box-shadow:0 12px 25px rgba(0,0,0,.12);
     }
 
     .btn{
       display:inline-block;
+      margin-top:20px;
       padding:14px 24px;
       background:var(--accent);
       color:white;
@@ -80,8 +110,8 @@
     }
 
     .footer{
-      margin-top:25px;
-      font-size:14px;
+      margin-top:30px;
+      font-size:13px;
       color:#777;
       text-align:center;
     }
@@ -98,38 +128,49 @@
 
     <p>
       Sono alla ricerca di partecipanti per uno studio volto ad esaminare l’influenza della mindfulness sulla capacità di immaginazione visiva.
-      Sto cercando volontari maggiorenni, preferibilmente destrimani, con vista normale o corretta (lenti a contatto) e senza diagnosi di disturbi psichiatrici o neurologici.
+      Cerco volontari maggiorenni, preferibilmente destrimani, con vista normale o corretta (lenti a contatto) e senza diagnosi di disturbi psichiatrici o neurologici.
     </p>
 
     <h2>Come si svolge lo studio</h2>
 
     <p>
-      L’esperimento prevede due fasi. La prima consiste in una sessione in laboratorio, svolta prima e dopo il training centrale,
-      durante la quale verranno somministrati due questionari (VVIQ e DASS-21) e un breve compito di immaginazione visiva con registrazione dell’attività oculare tramite eye-tracker.
+      L’esperimento prevede due fasi. La prima consiste in una sessione in laboratorio, svolta prima e dopo il periodo di training,
+      durante la quale verranno somministrati due questionari (VVIQ e DASS-21) e un breve compito di immaginazione visiva con registrazione
+      dell’attività oculare tramite eye-tracker.
     </p>
 
     <p>
       La seconda fase ha una durata di quattro settimane e si svolge autonomamente a casa.
-      Durante questo periodo sarà richiesto di svolgere quotidianamente compiti di ricerca visiva oppure praticare mindfulness
-      (per circa 10–30 minuti al giorno), seguendo un’audioguida fornita.
+      Durante questo periodo sarà richiesto di svolgere quotidianamente compiti di ricerca visiva oppure di praticare mindfulness
+      (10–30 minuti al giorno) seguendo un’audioguida fornita.
       Al termine delle quattro settimane è previsto un nuovo incontro in laboratorio per ripetere le misurazioni iniziali.
     </p>
 
     <h2>Dove</h2>
 
     <p>
-      L’esperimento si svolge presso il Laboratorio di Psicofisica del Dipartimento di Psicologia e Scienze Cognitive,
-      Università degli Studi di Trento (Corso Bettini 31, Rovereto – TN).
+      Laboratorio di Psicofisica – Dipartimento di Psicologia e Scienze Cognitive  
+      Università degli Studi di Trento  
+      Corso Bettini 31, Rovereto (TN)
     </p>
 
-    <div class="cta">
+    <div class="contact-box">
+      <p><strong>Interessata/o a partecipare?</strong></p>
+      <p>Contattami direttamente via email:</p>
+
+      <a class="email" href="mailto:federica.rama@studenti.unitn.it?subject=Partecipazione%20studio%20mindfulness">
+        federica.rama@studenti.unitn.it
+      </a>
+
+      <br>
+
       <a class="btn" href="mailto:federica.rama@studenti.unitn.it?subject=Partecipazione%20studio%20mindfulness">
-        Scrivimi per partecipare
+        Scrivimi ora
       </a>
     </div>
 
     <div class="footer">
-      federica.rama@studenti.unitn.it
+      Grazie per l’attenzione.
     </div>
 
   </div>
