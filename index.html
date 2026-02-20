@@ -141,23 +141,23 @@
 
     /* 🔹 UNICA MODIFICA: sistemazione email */
     .email{
-      display:inline-block;
-      font-weight:800;
-      color: var(--accent);
-      text-decoration:none;
-      background:#fff;
-      border-radius: 999px;
-      padding: 8px 14px;
-      margin-top: 8px;
-      box-shadow: 0 10px 18px rgba(16,17,20,.08);
-      font-size: 15px;
+  display:inline-block;
+  font-weight:800;
+  color: var(--accent);
+  text-decoration:none;
+  background:#fff;
+  border-radius: 999px;
+  padding: 8px 14px;
+  margin-top: 8px;
+  box-shadow: 0 10px 18px rgba(16,17,20,.08);
 
-      /* Fix responsive */
-      max-width: 100%;
-      white-space: normal;
-      overflow-wrap: anywhere;
-      word-break: break-word;
-    }
+  /* 🔹 font responsive dinamico */
+  font-size: clamp(11px, 3.5vw, 15px);
+
+  /* resta sempre su una riga */
+  white-space: nowrap;
+  max-width: 100%;
+}
 
     .btn{
       display:inline-block;
