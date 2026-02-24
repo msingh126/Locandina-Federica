@@ -137,6 +137,7 @@
       border-radius: 18px;
       padding: 14px;
       text-align:center;
+      container-type: inline-size;
     }
 
     /* 🔹 UNICA MODIFICA: sistemazione email */
@@ -151,14 +152,15 @@
   margin-top: 8px;
   box-shadow: 0 10px 18px rgba(16,17,20,.08);
 
-  /* 🔹 font responsive dinamico */
-  font-size: clamp(11px, 3.5vw, 15px);
-
   /* resta sempre su una riga */
   white-space: nowrap;
   max-width: 100%;
 }
-
+@container (width < 300px) {
+    .email {
+        font-size: 5.2cqw;
+    }
+}
     .btn{
       display:inline-block;
       margin-top: 10px;
